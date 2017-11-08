@@ -1,0 +1,64 @@
+<section class="content-header">
+    <h1>{{"Place"|translate}}<small>{{"Add_New_Place"|translate}}</small></h1>
+</section>
+<section ng-show="vm.can('create.place')" class="content">
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <!-- <h3 class="box-title">&nbsp; {{"Add_New_Place"|translate}}</h3> -->
+                </div>
+                <form class="form-horizontal" name="websiteForm" ng-submit="vm.save(websiteForm.$valid, websiteForm)" novalidate>
+                    <div class="box-body">
+                        <div ng-if="vm.alerts" class="alert alert-{{alert.type}}" ng-repeat="alert in vm.alerts track by $index">
+                            <h4>{{alert.title}}</h4>
+                            <p ng-if="alert.type=='success'"> {{alert.msg}}</p>
+                            <p ng-if="alert.type=='error'" ng-repeat="errorss in alert.msg track by $index"> {{errorss[0]}}</p>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error': websiteForm.Name.$invalid && ( vm.formSubmitted || websiteForm.Name.$touched) }">
+                            <label for="inputEmail3" class="col-lg-2 control-label">{{"Place_public_name"|translate}}</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="vm.Name" name="Name" placeholder={{"Name"|translate}} required>
+                                <p ng-show="websiteForm.Name.$error.required && ( vm.formSubmitted || websiteForm.Name.$touched)" class="help-block">{{"Name_is_required"|translate}}.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-class="{ 'has-error': websiteForm.Comments.$invalid && ( vm.formSubmitted || websiteForm.Comments.$touched) }">
+                            <label for="inputPassword3" class="col-lg-2 control-label">{{"Classroom_name"|translate}}</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="vm.Comments" name="Comments" placeholder={{"Comments"|translate}} required>
+                                <p ng-show="websiteForm.Comments.$error.required && ( vm.formSubmitted || websiteForm.Comments.$touched)" class="help-block">{{"Comments_is_required"|translate}}</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-class="{ 'has-error': websiteForm.Type.$invalid && ( vm.formSubmitted || websiteForm.Type.$touched) }">
+                            <label for="inputPassword3" class="col-lg-2 control-label">{{"Place_ShortName"|translate}}</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="vm.Type" name="Type" placeholder={{"ShortName"|translate}} required>
+                                <p ng-show="websiteForm.Type.$error.required && ( vm.formSubmitted || websiteForm.Type.$touched)" class="help-block">{{"ShortName_is_required"|translate}}.</p>
+                            </div>
+                        </div>
+
+                         
+                        <div class="form-group" ng-class="{ 'has-error': websiteForm.IsActive.$invalid && ( vm.formSubmitted || websiteForm.IsActive.$touched) }">
+                          <label for="status" class="col-sm-2 control-label">{{"Status"|translate}}</label>
+                          <div class="col-sm-10">
+                           <select class="form-control" name="IsActive" style="width:100px;" required ng-model="vm.IsActive" >
+                            <option value="">{{"Please_select"|translate}}</option>
+                            <option value="1">{{"Active"|translate}}</option>
+                            <option value="0">{{"In-Active"|translate}}</option>
+                        </select>
+                        <p ng-show="websiteForm.IsActive.$error.required && ( vm.formSubmitted || websiteForm.IsActive.$touched)" class="help-block">{{"Status_is_required"|translate}}.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box-footer">
+                <a ui-sref="app.userlist.list_place" class="btn btn-default"><i class="fa fa-angle-double-left"></i> {{"Back"|translate}}</a>
+                <button type="submit" class="btn btn-primary pull-right">{{"Add_New_Place"|translate}}</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</section>

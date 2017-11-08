@@ -1,0 +1,138 @@
+<section class="content-header">
+  <h1>{{"Place"|translate}} <small>{{"View_Place_Information"|translate}}</small></h1>
+ <!--  <ol class="breadcrumb">
+    <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> {{"HOME_btn"|translate}}</a></li>
+    <li><a ui-sref="app.userlist.list_place">{{"Place_List"|translate}}</a></li>
+    <li class="active">{{"View_Place_Information"|translate}}</li>
+  </ol> -->
+</section> 
+<section class="content">
+  <div class="row">
+    <div class="col-sm-12 col-md-7">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <!-- <h3 class="box-title">{{"View_Place_Information"|translate}}</h3> -->
+        </div>
+  
+          <div class="table-responsive">
+            <table class="table" style="width:70%;">
+
+              <tr>
+                <td style="width: 40%">
+                  <div class="pull-left">
+                    <label for="name" class="col-sm-4 control-label">{{"Place_public_name"|translate}}:</label>
+                  </div>
+                </td>
+                <td>
+                  <label for="name" class="control-label">{{vm.maincourse.data.Name}}</label> 
+                </td>
+              </tr>
+
+
+              <tr>
+                <td style="width: 40%">
+                  <div class="pull-left">
+                    <label for="Comments" class="col-sm-4 control-label">{{"Classroom_name"|translate}}:</label>
+                  </div>
+                </td>
+                <td>
+                  <label for="Comments" class="control-label">{{vm.maincourse.data.Comments}}</label>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="pull-left">
+                    <label for="Type" class="col-sm-4 control-label">{{"Place_ShortName"|translate}}:</label>
+                  </div>
+                </td>
+                <td>
+                  <label for="Type" class="control-label">{{vm.maincourse.data.Type}}</label>
+                </td>
+              </tr>
+
+             <tr>
+              <td>
+                <div class="pull-left">
+                  <label for="IsActive" class="col-sm-4 control-label">{{"IsActive"|translate}}:</label>
+                </div>
+              </td>
+              <td>
+                <label for="IsActive" class="control-label" ng-model="vm.maincourse.data.IsDeleted" ng-init="vm.maincourse.data.IsActive=1"></label>
+                <div ng-if="vm.maincourse.data.IsActive=='1'">
+                  <small class="control-label label pull-left bg-green" style="margin-top:-10px;">{{"Yes"|translate}}</small>
+                </div>
+                <div ng-if="vm.maincourse.data.IsActive=='0'">
+                  <small class="control-label label pull-left bg-red" style="margin-top:-10px;">{{"No"|translate}}</small>
+                </div>
+
+              </td>
+
+            </tr>  
+
+            <tr>
+              <td>
+                <div class="pull-left">
+                  <label for="DeletedBy" class="col-sm-4 control-label">{{"DeletedBy"|translate}}:</label>
+                </div>
+              </td>
+              <td>
+                <label for="DeletedBy" class="control-label">{{vm.maincourse.data.Deleted}}</label>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="pull-left">
+                  <label for="CreatedBy" class="col-sm-4 control-label">{{"CreatedBy"|translate}}:</label>
+                </div>
+              </td>
+              <td>
+                <label for="CreatedBy" class="control-label">{{vm.maincourse.data.Created}}</label>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="pull-left">
+                  <label for="ModifiedBy" class="col-sm-4 control-label">{{"ModifiedBy"|translate}}:</label>
+                </div>
+              </td>
+              <td>
+                <label for="ModifiedBy" class="control-label">{{vm.maincourse.data.Modified}}</label>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="pull-left">
+                  <label for="created_at" class="col-sm-4 control-label">{{"Created_at"|translate}}:</label>
+                </div>
+              </td>
+              <td>
+                <label for="created_at" class="control-label">{{vm.maincourse.data.created_at}}</label>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="pull-left">
+                  <label for="updated_at" class="col-sm-4 control-label">{{"Updated_at"|translate}}:</label>
+                </div>
+              </td>
+              <td>
+                <label for="updated_at" class="control-label">{{vm.maincourse.data.updated_at}}</label>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="box-footer">
+          <a ui-sref="app.userlist.list_place" class="btn btn-default"><i class="fa fa-angle-double-left"></i>{{"Back"|translate}} </a>
+        </div>
+      
+    </div>
+  </div>
+</div>
+</section>
+
